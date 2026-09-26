@@ -1,0 +1,19 @@
+class Solution:
+    def secondLargestElement(self, nums):
+
+        maximum = nums[0]
+
+        for i in range(len(nums)):
+            if nums[i] > maximum:
+                maximum = nums[i]
+
+        SecMaximum = float('-inf')
+
+        for i in range(len(nums)):
+            if nums[i] > SecMaximum and nums[i] != maximum:
+                SecMaximum = nums[i]
+
+        if SecMaximum == float('-inf'):
+            return -1
+
+        return SecMaximum
